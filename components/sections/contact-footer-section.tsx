@@ -12,8 +12,8 @@ export function ContactFooterSection() {
       <div className="absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
       <div className="section-shell space-y-10">
         <Reveal className="luxury-outline relative rounded-[1.5rem] border border-brand-gold/30 bg-white/5 p-6 md:p-9">
-          <div className="flex flex-col items-start justify-between gap-8 md:flex-row">
-          <div className="space-y-4">
+          <div className="grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-start">
+          <div className="space-y-4 md:pr-3">
             <div className="flex items-center gap-4">
               <Image src="/logo.png" alt={siteContent.company.name} width={62} height={62} className="float-soft h-14 w-14 rounded-full border border-brand-gold/70 bg-white p-1" />
               <div>
@@ -30,12 +30,12 @@ export function ContactFooterSection() {
             </div>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className="grid w-full gap-6 sm:grid-cols-2">
             {siteContent.contact.founders.map((founder) => (
-              <div key={founder.email} className="interactive-card rounded-[1rem] border border-brand-gold/35 bg-white/10 p-[1.45rem] backdrop-blur-sm hover:border-brand-gold/60">
+              <div key={founder.email} className="interactive-card min-w-0 rounded-[1rem] border border-brand-gold/35 bg-white/10 p-[1.45rem] backdrop-blur-sm hover:border-brand-gold/60">
                 <p className="text-[1.07rem] font-semibold text-brand-gold">{founder.name}</p>
                 <p className="mt-2 text-[1.02rem] text-white/95">{founder.phone}</p>
-                <p className="break-all text-[1.02rem] text-white/95">{founder.email}</p>
+                <p className="text-[1.02rem] text-white/95">{founder.email}</p>
               </div>
             ))}
           </div>
