@@ -21,7 +21,7 @@ const transparentIcons = [Handshake, ShieldCheck, Briefcase];
 
 export function AboutSection() {
   return (
-    <section id="about" className="relative overflow-hidden py-20 md:py-28">
+    <section id="about" className="relative overflow-hidden py-14 md:py-28">
       {/* Ambient background orbs */}
       <div className="ambient-orb absolute -right-20 top-24 h-72 w-72 rounded-full bg-brand-gold/10 blur-3xl" />
       <div className="ambient-orb absolute -left-16 bottom-20 h-56 w-56 rounded-full bg-brand-burgundy/8 blur-3xl" />
@@ -32,7 +32,7 @@ export function AboutSection() {
         <UsersRound className="h-7 w-7" />
       </Reveal>
 
-      <div className="section-shell relative z-10 space-y-20">
+      <div className="section-shell relative z-10 space-y-14 md:space-y-20">
         {/* ─── Section Header ─── */}
         <Reveal>
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
@@ -50,7 +50,7 @@ export function AboutSection() {
         <Reveal delay={60}>
           <div className="relative rounded-2xl border border-brand-gold/30 bg-white/60 px-7 py-6 backdrop-blur-sm md:px-10 md:py-8">
             <div className="absolute -left-3 top-6 hidden h-12 w-1 rounded-full bg-brand-gold md:block" />
-            <p className="max-w-6xl text-base leading-8 text-brand-burgundy/95 md:text-lg md:leading-9">
+            <p className="max-w-6xl text-sm leading-7 text-brand-burgundy/95 sm:text-base md:text-lg md:leading-9">
               {siteContent.about.paragraph}
             </p>
           </div>
@@ -64,7 +64,7 @@ export function AboutSection() {
                 <Trophy className="h-5 w-5 text-brand-burgundy" />
               </div>
               <div>
-                <h3 className="text-2xl font-semibold tracking-[0.08em] text-brand-burgundy md:text-3xl">
+                <h3 className="text-xl font-semibold tracking-[0.06em] text-brand-burgundy sm:text-2xl md:text-3xl">
                   {siteContent.about.objectiveTitle}
                 </h3>
                 <p className="mt-1 text-sm text-brand-burgundy/80">{siteContent.about.objectivePrefix}</p>
@@ -72,7 +72,7 @@ export function AboutSection() {
             </div>
           </Reveal>
 
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:hidden">
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-3 xl:hidden">
             {siteContent.about.objectives.map((point, index) => {
               const Icon = objectiveIcons[index];
               const [title, description] = point.split(" — ");
@@ -83,7 +83,7 @@ export function AboutSection() {
                       <Icon className="h-5 w-5 text-brand-burgundy transition duration-300 group-hover:text-brand-gold" />
                     </div>
                     <h4 className="mb-2 text-sm font-bold tracking-wide text-brand-burgundy">{title}</h4>
-                    <p className="text-[13px] leading-relaxed text-brand-burgundy/80">{description}</p>
+                    <p className="text-xs leading-relaxed text-brand-burgundy/80 sm:text-[13px]">{description}</p>
                     <div className="mt-4 h-[2px] w-12 rounded-full bg-brand-gold/45 transition-all duration-300 group-hover:w-full group-hover:bg-brand-gold/70" />
                   </div>
                 </Reveal>
@@ -135,7 +135,7 @@ export function AboutSection() {
               <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-brand-gold/60 bg-brand-soft/60">
                 <Eye className="h-5 w-5 text-brand-burgundy" />
               </div>
-              <h3 className="text-2xl font-semibold tracking-[0.08em] text-brand-burgundy md:text-3xl">
+              <h3 className="text-xl font-semibold tracking-[0.06em] text-brand-burgundy sm:text-2xl md:text-3xl">
                 {siteContent.about.transparentTitle}
               </h3>
             </div>
@@ -145,7 +145,7 @@ export function AboutSection() {
             {siteContent.about.transparentPoints.map((point, index) => (
               <Reveal key={point} delay={80 + index * 100}>
                 <>
-                  <div className={`interactive-card premium-glow group relative flex min-h-[11.2rem] flex-col overflow-hidden rounded-2xl border border-brand-gold/35 bg-white/72 p-6 backdrop-blur-sm hover:border-brand-gold/65 hover:shadow-premium ${index === 0 ? "mr-auto w-full md:w-[72%]" : index === 1 ? "mx-auto w-full md:w-[72%]" : "ml-auto w-full md:w-[72%]"}`}>
+                  <div className={`interactive-card premium-glow group relative flex min-h-[8.8rem] flex-col overflow-hidden rounded-2xl border border-brand-gold/35 bg-white/72 p-4 sm:p-5 md:min-h-[11.2rem] md:p-6 backdrop-blur-sm hover:border-brand-gold/65 hover:shadow-premium ${index === 0 ? "mr-auto w-full md:w-[72%]" : index === 1 ? "mx-auto w-full md:w-[72%]" : "ml-auto w-full md:w-[72%]"}`}>
                     <div className="mb-4 flex items-center justify-between">
                       <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-burgundy text-sm font-bold text-white transition duration-300 group-hover:bg-brand-gold">
                         {index + 1}
@@ -160,7 +160,7 @@ export function AboutSection() {
                       })()}
                     </div>
 
-                    <p className="flex-1 text-sm leading-7 text-brand-burgundy/95 md:text-base">{point}</p>
+                    <p className="flex-1 text-sm leading-6 text-brand-burgundy/95 md:text-base md:leading-7">{point}</p>
                     <div className="mt-4 h-[2px] w-12 rounded-full bg-brand-gold/40 transition-all duration-300 group-hover:w-full group-hover:bg-brand-gold/60" />
                   </div>
 
