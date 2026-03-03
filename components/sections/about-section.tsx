@@ -72,30 +72,59 @@ export function AboutSection() {
             </div>
           </Reveal>
 
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:hidden">
             {siteContent.about.objectives.map((point, index) => {
               const Icon = objectiveIcons[index];
               const [title, description] = point.split(" — ");
               return (
                 <Reveal key={point} delay={60 + index * 80}>
                   <div className="interactive-card premium-glow group h-full rounded-2xl border border-brand-burgundy/12 bg-white/78 p-5 backdrop-blur-sm hover:border-brand-gold/55 hover:shadow-premium">
-                    {/* Icon circle */}
                     <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl border border-brand-gold/55 bg-gradient-to-br from-brand-soft/85 to-white transition duration-300 group-hover:scale-110 group-hover:shadow-lg">
                       <Icon className="h-5 w-5 text-brand-burgundy transition duration-300 group-hover:text-brand-gold" />
                     </div>
-                    {/* Title */}
-                    <h4 className="mb-2 text-sm font-bold tracking-wide text-brand-burgundy">
-                      {title}
-                    </h4>
-                    {/* Description */}
-                    <p className="text-[13px] leading-relaxed text-brand-burgundy/80">
-                      {description}
-                    </p>
+                    <h4 className="mb-2 text-sm font-bold tracking-wide text-brand-burgundy">{title}</h4>
+                    <p className="text-[13px] leading-relaxed text-brand-burgundy/80">{description}</p>
                     <div className="mt-4 h-[2px] w-12 rounded-full bg-brand-gold/45 transition-all duration-300 group-hover:w-full group-hover:bg-brand-gold/70" />
                   </div>
                 </Reveal>
               );
             })}
+          </div>
+
+          <div className="relative hidden xl:block">
+            <div className="pointer-events-none absolute left-1/2 top-[16%] h-[2px] w-[40%] -translate-x-1/2 bg-gradient-to-r from-transparent via-brand-gold/75 to-transparent" />
+            <div className="pointer-events-none absolute left-1/2 top-[16%] h-[44%] w-[2px] -translate-x-1/2 bg-gradient-to-b from-brand-gold/80 to-brand-gold/35" />
+            <div className="pointer-events-none absolute left-[18%] top-[42%] h-[2px] w-[30%] bg-gradient-to-r from-brand-gold/75 to-brand-gold/30" />
+            <div className="pointer-events-none absolute right-[18%] top-[42%] h-[2px] w-[30%] bg-gradient-to-l from-brand-gold/75 to-brand-gold/30" />
+            <div className="pointer-events-none absolute left-[18%] top-[42%] h-[30%] w-[2px] bg-gradient-to-b from-brand-gold/65 to-brand-gold/20" />
+            <div className="pointer-events-none absolute right-[18%] top-[42%] h-[30%] w-[2px] bg-gradient-to-b from-brand-gold/65 to-brand-gold/20" />
+
+            <div className="grid grid-cols-3 gap-6">
+              {siteContent.about.objectives.map((point, index) => {
+                const Icon = objectiveIcons[index];
+                const [title, description] = point.split(" — ");
+                const placements = [
+                  "col-start-2 row-start-1",
+                  "col-start-1 row-start-2",
+                  "col-start-3 row-start-2",
+                  "col-start-1 row-start-3",
+                  "col-start-3 row-start-3"
+                ];
+
+                return (
+                  <Reveal key={point} delay={60 + index * 120} className={placements[index]}>
+                    <div className="interactive-card premium-glow group h-full rounded-2xl border border-brand-burgundy/12 bg-white/78 p-5 backdrop-blur-sm hover:border-brand-gold/55 hover:shadow-premium">
+                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl border border-brand-gold/55 bg-gradient-to-br from-brand-soft/85 to-white transition duration-300 group-hover:scale-110 group-hover:shadow-lg">
+                        <Icon className="h-5 w-5 text-brand-burgundy transition duration-300 group-hover:text-brand-gold" />
+                      </div>
+                      <h4 className="mb-2 text-sm font-bold tracking-wide text-brand-burgundy">{title}</h4>
+                      <p className="text-[13px] leading-relaxed text-brand-burgundy/80">{description}</p>
+                      <div className="mt-4 h-[2px] w-12 rounded-full bg-brand-gold/45 transition-all duration-300 group-hover:w-full group-hover:bg-brand-gold/70" />
+                    </div>
+                  </Reveal>
+                );
+              })}
+            </div>
           </div>
         </div>
 

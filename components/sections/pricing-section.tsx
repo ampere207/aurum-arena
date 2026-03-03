@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 import { Award, CircleDollarSign, Crown } from "lucide-react";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,6 +10,7 @@ import { siteContent } from "@/lib/constants";
 
 export function PricingSection() {
   const priceIcons = [CircleDollarSign, Crown, Award];
+  const [activeHoverIndex, setActiveHoverIndex] = useState<number | null>(null);
 
   return (
     <section id="pricing" className="relative py-16 md:py-24">
@@ -24,18 +29,22 @@ export function PricingSection() {
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {siteContent.pricing.cards.map((card, index) => (
             <Reveal key={card.title} delay={80 + index * 120}>
-              <Card className={`interactive-card pricing-card group relative flex h-full flex-col overflow-hidden bg-white/82 hover:border-brand-gold/70 hover:shadow-premium ${index === 1 ? "scale-[1.01] premium-glow" : ""}`}>
+              <Card
+                onMouseEnter={() => setActiveHoverIndex(index)}
+                onMouseLeave={() => setActiveHoverIndex(null)}
+                className={`pricing-card group relative flex h-full flex-col overflow-hidden bg-white/82 transition-all duration-300 hover:z-20 hover:scale-[1.07] hover:-translate-y-3 hover:border-brand-gold/80 hover:shadow-[0_24px_50px_rgba(114,56,61,0.25)] ${index === 1 && (activeHoverIndex === null || activeHoverIndex === 1) ? "z-10 scale-[1.05] -translate-y-2 border-brand-gold/80 premium-glow" : ""} ${index === 1 && activeHoverIndex !== null && activeHoverIndex !== 1 ? "scale-100 translate-y-0 border-brand-gold/50" : ""}`}
+              >
                 <div className="absolute right-4 top-4 rounded-full border border-brand-gold/60 px-3 py-1 text-xs font-semibold tracking-[0.12em] text-brand-gold">
                   0{index + 1}
                 </div>
 
                 {index === 1 ? (
-                  <div className="absolute left-4 top-4 rounded-full border border-brand-gold/55 bg-brand-gold/20 px-3 py-1 text-[11px] font-semibold tracking-[0.1em] text-brand-burgundy">
+                  <div className="absolute left-1/2 top-4 -translate-x-1/2 rounded-full border border-brand-gold/55 bg-brand-gold/20 px-3 py-1 text-[11px] font-semibold tracking-[0.1em] text-brand-burgundy">
                     MOST POPULAR
                   </div>
                 ) : null}
 
-                <CardHeader className="border-b border-brand-burgundy/10 pt-8">
+                <CardHeader className="border-b border-brand-burgundy/10 pt-10">
                   <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl border border-brand-gold/55 bg-brand-soft/60">
                     {(() => {
                       const Icon = priceIcons[index];

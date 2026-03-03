@@ -60,6 +60,13 @@ export function EngagementSection() {
     [flowSteps[7], flowSteps[6]]
   ];
 
+  const rowTimings = [
+    { first: 0, connector: 1, second: 2, down: 3 },
+    { first: 6, connector: 5, second: 4, down: 7 },
+    { first: 8, connector: 9, second: 10, down: 11 },
+    { first: 14, connector: 13, second: 12, down: null }
+  ];
+
   return (
     <section id="engagement-formats" className="relative overflow-hidden py-16 md:py-24">
       <div className="ambient-orb absolute left-4 top-16 h-36 w-36 rounded-full bg-brand-gold/10 blur-3xl" />
@@ -132,20 +139,20 @@ export function EngagementSection() {
                     .map((step, index) => {
                       const Icon = step.icon;
                       return (
-                        <Reveal key={step.label} delay={100 + index * 80}>
+                        <Reveal key={step.label} delay={120 + index * 140}>
                           <div className="snake-node p-3.5">
                             <div className="flex items-start gap-3">
                               <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-brand-gold/55 bg-white">
                                 <Icon className="h-4 w-4 text-brand-burgundy" />
                               </div>
                               <div>
-                                <p className="text-xs font-semibold tracking-[0.08em] text-brand-gold">0{step.number}</p>
-                                <p className="text-sm text-brand-burgundy">{step.label}</p>
+                                <p className="text-sm font-bold tracking-[0.08em] text-brand-gold">0{step.number}</p>
+                                <p className="text-base font-medium text-brand-burgundy">{step.label}</p>
                               </div>
                             </div>
                           </div>
                           {index < 7 ? (
-                            <Reveal delay={130 + index * 80} className="flex justify-center py-0.5">
+                            <Reveal delay={180 + index * 140} className="flex justify-center py-0.5">
                               <div className="snake-link-v ttb" />
                             </Reveal>
                           ) : null}
@@ -159,37 +166,38 @@ export function EngagementSection() {
                     const isLTR = rowIndex % 2 === 0;
                     const FirstIcon = row[0].icon;
                     const SecondIcon = row[1].icon;
+                    const timing = rowTimings[rowIndex];
 
                     return (
                       <div key={`row-${rowIndex}`} className="space-y-3">
                         <div className="grid grid-cols-[1fr_5.5rem_1fr] items-stretch gap-3">
                           {isLTR ? (
                             <>
-                              <Reveal delay={120 + rowIndex * 140}>
+                              <Reveal delay={120 + timing.first * 120}>
                                 <div className="snake-node min-h-[7.6rem] p-3.5">
                                   <div className="flex items-start gap-3">
                                     <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-brand-gold/55 bg-white">
                                       <FirstIcon className="h-4 w-4 text-brand-burgundy" />
                                     </div>
                                     <div>
-                                      <p className="text-xs font-semibold tracking-[0.08em] text-brand-gold">0{row[0].number}</p>
-                                      <p className="text-sm text-brand-burgundy">{row[0].label}</p>
+                                      <p className="text-sm font-bold tracking-[0.08em] text-brand-gold">0{row[0].number}</p>
+                                      <p className="text-base font-medium text-brand-burgundy">{row[0].label}</p>
                                     </div>
                                   </div>
                                 </div>
                               </Reveal>
-                              <Reveal delay={155 + rowIndex * 140} className="snake-link-wrap -mx-2.5">
+                              <Reveal delay={120 + timing.connector * 120} className="snake-link-wrap -mx-2.5">
                                 <div className="snake-link-h ltr" />
                               </Reveal>
-                              <Reveal delay={190 + rowIndex * 140}>
+                              <Reveal delay={120 + timing.second * 120}>
                                 <div className="snake-node min-h-[7.6rem] p-3.5">
                                   <div className="flex items-start gap-3">
                                     <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-brand-gold/55 bg-white">
                                       <SecondIcon className="h-4 w-4 text-brand-burgundy" />
                                     </div>
                                     <div>
-                                      <p className="text-xs font-semibold tracking-[0.08em] text-brand-gold">0{row[1].number}</p>
-                                      <p className="text-sm text-brand-burgundy">{row[1].label}</p>
+                                      <p className="text-sm font-bold tracking-[0.08em] text-brand-gold">0{row[1].number}</p>
+                                      <p className="text-base font-medium text-brand-burgundy">{row[1].label}</p>
                                     </div>
                                   </div>
                                 </div>
@@ -197,31 +205,31 @@ export function EngagementSection() {
                             </>
                           ) : (
                             <>
-                              <Reveal delay={120 + rowIndex * 140}>
+                              <Reveal delay={120 + timing.first * 120}>
                                 <div className="snake-node min-h-[7.6rem] p-3.5">
                                   <div className="flex items-start gap-3">
                                     <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-brand-gold/55 bg-white">
                                       <FirstIcon className="h-4 w-4 text-brand-burgundy" />
                                     </div>
                                     <div>
-                                      <p className="text-xs font-semibold tracking-[0.08em] text-brand-gold">0{row[0].number}</p>
-                                      <p className="text-sm text-brand-burgundy">{row[0].label}</p>
+                                      <p className="text-sm font-bold tracking-[0.08em] text-brand-gold">0{row[0].number}</p>
+                                      <p className="text-base font-medium text-brand-burgundy">{row[0].label}</p>
                                     </div>
                                   </div>
                                 </div>
                               </Reveal>
-                              <Reveal delay={155 + rowIndex * 140} className="snake-link-wrap -mx-2.5">
+                              <Reveal delay={120 + timing.connector * 120} className="snake-link-wrap -mx-2.5">
                                 <div className="snake-link-h rtl" />
                               </Reveal>
-                              <Reveal delay={190 + rowIndex * 140}>
+                              <Reveal delay={120 + timing.second * 120}>
                                 <div className="snake-node min-h-[7.6rem] p-3.5">
                                   <div className="flex items-start gap-3">
                                     <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-brand-gold/55 bg-white">
                                       <SecondIcon className="h-4 w-4 text-brand-burgundy" />
                                     </div>
                                     <div>
-                                      <p className="text-xs font-semibold tracking-[0.08em] text-brand-gold">0{row[1].number}</p>
-                                      <p className="text-sm text-brand-burgundy">{row[1].label}</p>
+                                      <p className="text-sm font-bold tracking-[0.08em] text-brand-gold">0{row[1].number}</p>
+                                      <p className="text-base font-medium text-brand-burgundy">{row[1].label}</p>
                                     </div>
                                   </div>
                                 </div>
@@ -230,8 +238,8 @@ export function EngagementSection() {
                           )}
                         </div>
 
-                        {rowIndex < snakeRows.length - 1 ? (
-                          <Reveal delay={205 + rowIndex * 140} className={`flex ${isLTR ? "justify-end pr-[20%]" : "justify-start pl-[20%]"}`}>
+                        {timing.down !== null ? (
+                          <Reveal delay={120 + timing.down * 120} className={`flex ${isLTR ? "justify-end pr-[20%]" : "justify-start pl-[20%]"}`}>
                             <div className="snake-link-v ttb" />
                           </Reveal>
                         ) : null}

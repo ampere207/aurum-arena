@@ -5,7 +5,7 @@ import "./globals.css";
 import { siteContent } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: `${siteContent.company.name} | ${siteContent.company.subtitle}`,
+  title: siteContent.company.name,
   description: siteContent.company.repeatingLine,
   icons: {
     icon: "/logo.png",

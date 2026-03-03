@@ -126,20 +126,20 @@ export const siteContent = {
     heading: "Get In Touch",
     details: [
       "Email: contact@aurumarena.com",
-      "Phone: +91 XXXXX XXXXX",
+      "Phone: +91 70224 98474",
       "Website: www.aurumarena.com",
-      "Location: [City, India]"
+      "Location: Kempamma enclave, Sharadamba nagar, Jalahalli village, Bengaluru, Karnataka 560013"
     ],
     founders: [
       {
         name: "Akshay Mahesh, Cofounder",
         phone: "+91 70224 98474",
-        email: "akshaymahesh@gmail.com"
+        email: "akshaymahesh@aurumarena.com"
       },
       {
-        name: "Devyani, Cofounder",
-        phone: "+91 9876543219",
-        email: "devyani@gmail.com"
+        name: "Devayaani P, Cofounder",
+        phone: "+91 77607 29379",
+        email: "Devayaani@aurumarena.com"
       }
     ],
     copyright: "© 2025 Aurum Arena. All rights reserved."

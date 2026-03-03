@@ -4,6 +4,8 @@ import { Reveal } from "@/components/ui/reveal";
 import { siteContent } from "@/lib/constants";
 
 export function ContactFooterSection() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer id="contact" className="relative overflow-hidden bg-brand-burgundy py-16 text-white">
       <div className="absolute -left-24 top-0 h-72 w-72 rounded-full bg-brand-gold/15 blur-3xl" />
@@ -30,10 +32,10 @@ export function ContactFooterSection() {
 
           <div className="grid gap-6 sm:grid-cols-2">
             {siteContent.contact.founders.map((founder) => (
-              <div key={founder.email} className="interactive-card rounded-[1rem] border border-brand-gold/35 bg-white/10 p-5 backdrop-blur-sm hover:border-brand-gold/60">
-                <p className="font-semibold text-brand-gold">{founder.name}</p>
-                <p className="mt-2 text-white/95">{founder.phone}</p>
-                <p className="text-white/95">{founder.email}</p>
+              <div key={founder.email} className="interactive-card rounded-[1rem] border border-brand-gold/35 bg-white/10 p-[1.45rem] backdrop-blur-sm hover:border-brand-gold/60">
+                <p className="text-[1.07rem] font-semibold text-brand-gold">{founder.name}</p>
+                <p className="mt-2 text-[1.02rem] text-white/95">{founder.phone}</p>
+                <p className="break-all text-[1.02rem] text-white/95">{founder.email}</p>
               </div>
             ))}
           </div>
@@ -41,7 +43,7 @@ export function ContactFooterSection() {
         </Reveal>
 
         <div className="space-y-2 border-t border-white/20 pt-6 text-sm text-white/90">
-          <p>{siteContent.contact.copyright}</p>
+          <p>© {currentYear} Aurum Arena. All rights reserved.</p>
           <p>{siteContent.company.repeatingLine}</p>
         </div>
       </div>

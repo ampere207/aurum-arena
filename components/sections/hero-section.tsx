@@ -16,13 +16,13 @@ export function HeroSection() {
     <section id="top" className="relative overflow-hidden bg-brand-beige py-10 md:py-14">
       <div className="ambient-orb absolute -left-20 top-0 h-64 w-64 rounded-full bg-brand-gold/15 blur-3xl" />
       <div className="ambient-orb absolute -right-16 bottom-4 h-56 w-56 rounded-full bg-brand-burgundy/15 blur-3xl" />
-      <Reveal delay={120} className="sports-bg-icon left-10 top-16 hidden md:block">
+      <Reveal delay={120} className="sports-bg-icon left-4 top-14 z-20 md:left-10 md:top-16">
         <Trophy className="h-8 w-8" />
       </Reveal>
-      <Reveal delay={220} className="sports-bg-icon alt right-12 top-28 hidden md:block slow">
+      <Reveal delay={220} className="sports-bg-icon alt right-4 top-20 z-20 slow md:right-12 md:top-28">
         <Goal className="h-7 w-7" />
       </Reveal>
-      <Reveal delay={300} className="sports-bg-icon left-[42%] bottom-8 hidden lg:block fast">
+      <Reveal delay={300} className="sports-bg-icon left-[42%] bottom-8 hidden lg:block fast z-10">
         <Medal className="h-7 w-7" />
       </Reveal>
 

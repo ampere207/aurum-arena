@@ -397,3 +397,404 @@ body {
     transform: translateY(-7px);
   }
 }
+
+.intro-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 14% 18%, rgba(212, 175, 55, 0.22), transparent 42%),
+    radial-gradient(circle at 84% 80%, rgba(114, 56, 61, 0.28), transparent 40%),
+    linear-gradient(160deg, #f8f2ee 0%, #f5ece7 55%, #efe5df 100%);
+}
+
+.intro-glow {
+  position: absolute;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 9999px;
+  filter: blur(56px);
+  opacity: 0.4;
+  animation: orbDrift 7s ease-in-out infinite alternate;
+}
+
+.intro-glow-left {
+  left: -5rem;
+  top: -5rem;
+  background: rgba(212, 175, 55, 0.45);
+}
+
+.intro-glow-right {
+  right: -5rem;
+  bottom: -5rem;
+  background: rgba(114, 56, 61, 0.45);
+}
+
+.intro-brand-overlay {
+  position: absolute;
+  z-index: 3;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.08rem;
+  text-align: center;
+}
+
+.intro-logo {
+  margin: 0;
+  border-radius: 9999px;
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  background: rgba(255, 255, 255, 0.88);
+  padding: 0.2rem;
+  animation: floatSoft 4.4s ease-in-out infinite;
+}
+
+.intro-brand-overlay h1 {
+  font-size: clamp(1.1rem, 2vw, 1.7rem);
+  letter-spacing: 0.14em;
+  color: #72383d;
+  font-weight: 700;
+}
+
+.intro-sub {
+  margin-top: 0.15rem;
+  font-size: 0.86rem;
+  color: rgba(114, 56, 61, 0.84);
+}
+
+.intro-video-open {
+  position: relative;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.intro-lottie {
+  width: min(50vw, 640px);
+  height: min(50vh, 420px);
+  max-width: 50vw;
+  max-height: 50vh;
+  animation: introVideoBlend 900ms ease both;
+}
+
+.intro-stage {
+  position: relative;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fusion-scene {
+  position: relative;
+  overflow: hidden;
+  width: min(94vw, 1200px);
+  height: min(74vh, 520px);
+  animation: sceneBlend 900ms ease both;
+}
+
+.pitch-line,
+.ground-line {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 17%;
+  height: 3px;
+  background: linear-gradient(to right, rgba(114, 56, 61, 0.08), rgba(114, 56, 61, 0.45), rgba(212, 175, 55, 0.9));
+}
+
+.bat {
+  position: absolute;
+  left: clamp(14%, 25vw, 32%);
+  bottom: 19%;
+  width: clamp(1.9rem, 2.7vw, 2.6rem);
+  height: clamp(6.8rem, 14vh, 9.4rem);
+  transform-origin: bottom center;
+  animation: batStrike 290ms cubic-bezier(0.27, 0.78, 0.28, 1) 1 both;
+}
+
+.bat-blade {
+  position: absolute;
+  left: 0;
+  bottom: 0.8rem;
+  width: 100%;
+  height: clamp(4.8rem, 10vh, 7rem);
+  border-radius: 0.85rem 0.85rem 0.45rem 0.45rem;
+  background: linear-gradient(180deg, #c99d64 0%, #a97741 55%, #8b5b31 100%);
+  box-shadow: inset 0 0 0 1px rgba(122, 76, 40, 0.4);
+}
+
+.bat-handle {
+  position: absolute;
+  left: 34%;
+  top: 0;
+  width: 32%;
+  height: clamp(2rem, 3.6vh, 2.8rem);
+  border-radius: 9999px;
+  background: linear-gradient(180deg, #442b22, #2d1a14);
+}
+
+.cricket-ball {
+  position: absolute;
+  left: clamp(26%, 31vw, 34%);
+  bottom: 27%;
+  width: clamp(1.05rem, 1.9vw, 1.4rem);
+  height: clamp(1.05rem, 1.9vw, 1.4rem);
+  border-radius: 9999px;
+  background: radial-gradient(circle at 30% 30%, #fff 6%, #dc3f39 35%, #8e2020 100%);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.72), 0 0 22px rgba(212, 175, 55, 0.52);
+  animation: ballToGoal 560ms cubic-bezier(0.3, 0.82, 0.24, 1) 1 130ms both;
+}
+
+.impact-burst {
+  position: absolute;
+  left: clamp(25%, 30vw, 33%);
+  bottom: 26%;
+  width: clamp(1.2rem, 2.3vw, 1.7rem);
+  height: clamp(1.2rem, 2.3vw, 1.7rem);
+  border-radius: 9999px;
+  border: 2px solid rgba(212, 175, 55, 0.86);
+  opacity: 0;
+  animation: impactPulse 220ms ease-out 1 110ms both;
+}
+
+.arc-trail {
+  position: absolute;
+  left: clamp(27%, 32vw, 36%);
+  bottom: 33%;
+  width: clamp(16rem, 35vw, 34rem);
+  height: clamp(4.5rem, 10vh, 8rem);
+  border-top: 3px dashed rgba(212, 175, 55, 0.74);
+  border-radius: 100% 100% 0 0;
+  opacity: 0;
+  animation: arcPulse 430ms ease-out 1 130ms both;
+}
+
+.goal-post {
+  position: absolute;
+  right: clamp(10%, 14vw, 20%);
+  bottom: 20%;
+  width: clamp(8rem, 15vw, 12.6rem);
+  height: clamp(5.4rem, 11vh, 8.4rem);
+  border: 4px solid rgba(114, 56, 61, 0.75);
+  border-bottom-width: 3px;
+  border-radius: 0.3rem;
+  transform-origin: center;
+  animation: goalShake 260ms ease-in-out 1 560ms both;
+}
+
+.net {
+  position: absolute;
+  inset: 0;
+  background-size: 0.62rem 0.62rem;
+  opacity: 0.35;
+}
+
+.net-a {
+  background-image:
+    linear-gradient(to right, rgba(114, 56, 61, 0.38) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(114, 56, 61, 0.38) 1px, transparent 1px);
+}
+
+.net-b {
+  transform: skewX(11deg);
+}
+
+.net-c {
+  transform: skewX(-11deg);
+}
+
+.scene-badge {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  translate: -50% 0;
+  margin: 0;
+  font-size: clamp(1.8rem, 3.8vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  opacity: 0;
+  transform: scale(0.7);
+  color: #72383d;
+  text-shadow: 0 0 22px rgba(212, 175, 55, 0.6);
+}
+
+.scene-badge.six {
+  animation: sixPop 330ms ease-out 1 170ms both;
+}
+
+.scene-badge.goal {
+  animation: goalPop 280ms ease-out 1 620ms both;
+}
+
+.intro-progress {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  width: min(360px, calc(100vw - 2rem));
+}
+
+.intro-progress-bar {
+  height: 0.28rem;
+  width: 0;
+  border-radius: 9999px;
+  background: linear-gradient(to right, #d4af37, #72383d, #d4af37);
+  transition: width 160ms linear;
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.48);
+}
+
+@keyframes introVideoBlend {
+  0% {
+    opacity: 0;
+    filter: saturate(1.08);
+  }
+  20%,
+  76% {
+    opacity: 1;
+    filter: saturate(1);
+  }
+  100% {
+    opacity: 0.9;
+    filter: saturate(1.02);
+  }
+}
+
+@keyframes sceneBlend {
+  0%,
+  35% {
+    filter: saturate(1) brightness(1);
+  }
+  52% {
+    filter: saturate(1.08) brightness(1.02);
+  }
+  100% {
+    filter: saturate(1) brightness(1);
+  }
+}
+
+@keyframes batStrike {
+  0%,
+  18% {
+    transform: rotate(15deg);
+  }
+  55% {
+    transform: rotate(-62deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+
+@keyframes ballToGoal {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  52% {
+    transform: translate(clamp(14rem, 27vw, 28rem), clamp(-3.4rem, -7vh, -6rem)) scale(0.92);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(clamp(24rem, 47vw, 50rem), clamp(-0.5rem, -2vh, -1.8rem)) scale(0.82);
+    opacity: 1;
+  }
+}
+
+@keyframes arcPulse {
+  0% {
+    opacity: 0;
+  }
+  35%,
+  82% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes impactPulse {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.35);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.8);
+  }
+}
+
+@keyframes goalShake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  35% {
+    transform: translateX(2px) skewX(2deg);
+  }
+  70% {
+    transform: translateX(-2px) skewX(-2deg);
+  }
+}
+
+@keyframes sixPop {
+  0%,
+  15% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  55%,
+  86% {
+    opacity: 1;
+    transform: scale(1.16);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes goalPop {
+  0%,
+  10% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  55%,
+  88% {
+    opacity: 1;
+    transform: scale(1.14);
+  }
+  100% {
+    opacity: 0.95;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-lottie,
+  .fusion-scene,
+  .bat,
+  .bat-blade,
+  .bat-handle,
+  .impact-burst,
+  .cricket-ball,
+  .arc-trail,
+  .goal-post,
+  .scene-badge,
+  .intro-logo {
+    animation: none !important;
+  }
+}
