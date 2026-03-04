@@ -85,6 +85,54 @@ export const siteContent = {
       "Tournament structure & match flow managed end-to-end."
     ]
   },
+  services: {
+    heading: "OUR SERVICES",
+    intro:
+      "At Aurum Arena, we don’t just organize events, we create complete experiences. From planning to execution, we take care of every detail so you can focus on enjoying the moment.",
+    categories: [
+      {
+        title: "Event Essentials",
+        items: [
+          "Professional Event Planning & Coordination",
+          "Experienced Anchors & Emcees",
+          "On-Ground Event Management Team"
+        ]
+      },
+      {
+        title: "Catering & Refreshments",
+        items: [
+          "Customized Catering Services",
+          "Snack & Beverage Counters",
+          "Refreshment Stalls for Participants & Guests"
+        ]
+      },
+      {
+        title: "Photography & Videography",
+        items: [
+          "Professional Photography Coverage",
+          "Cinematic Videography",
+          "Highlight Reels & Event After-Movie",
+          "Drone Coverage (on request)"
+        ]
+      },
+      {
+        title: "Sports & Event Merchandise",
+        items: [
+          "Customized Jerseys",
+          "Participant Kits",
+          "Branding & Merchandise Support"
+        ]
+      },
+      {
+        title: "Awards & Recognition",
+        items: [
+          "Custom Certificates",
+          "Trophies & Medals",
+          "Special Recognition Awards"
+        ]
+      }
+    ]
+  },
   partner: {
     heading: "Why Partner With Us",
     subheading: "Benefits of working with Aurum Arena",
@@ -105,7 +153,7 @@ export const siteContent = {
         lines: [
           "Up to 3 Hours",
           "Planning, scheduling, fixtures & on-ground coordination",
-          "Starting from Rs. 2,500 per session"
+          "Starting from Rs. 4,000 per day"
         ]
       },
       {
@@ -113,7 +161,7 @@ export const siteContent = {
         lines: [
           "Single Sport Day",
           "Tournament structuring, match scheduling & execution management",
-          "Starting from Rs. 4,000 - Rs. 6,000 per day"
+          "Starting from Rs. 10,000 per day"
         ]
       },
       {
@@ -126,18 +174,18 @@ export const siteContent = {
     heading: "Get In Touch",
     details: [
       "Email: contact@aurumarena.com",
-      "Phone: +91 70224 98474",
+      "Phone: +91 70224 98474 / +91 77607 29379",
       "Website: www.aurumarena.com",
       "Location: Kempamma enclave, Sharadamba nagar, Jalahalli village, Bengaluru, Karnataka 560013"
     ],
     founders: [
       {
-        name: "Akshay Mahesh, Cofounder",
+        name: "Akshay Mahesh, Co-Founder",
         phone: "+91 70224 98474",
         email: "akshaymahesh@aurumarena.com"
       },
       {
-        name: "Devayaani P, Cofounder",
+        name: "P Devayaani, Co-Founder",
         phone: "+91 77607 29379",
         email: "Devayaani@aurumarena.com"
       }
