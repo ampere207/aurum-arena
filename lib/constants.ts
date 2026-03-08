@@ -180,7 +180,7 @@ export const siteContent = {
     ],
     founders: [
       {
-        name: "Akshay Mahesh, Co-Founder",
+        name: "Akshay M, Co-Founder",
         phone: "+91 70224 98474",
         email: "akshaymahesh@aurumarena.com"
       },
